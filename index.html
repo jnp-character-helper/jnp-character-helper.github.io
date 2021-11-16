@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JNP New Character Helper</title>
+		<link rel="stylesheet" href="styles.css">
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div id="levelSelection" class="selectionModule">
+			<div id="cLevelInfo" class="infobox">
+				<p>If you are new to D&D 5e or character creation in general, select <strong>Level 1</strong>. If you are an experienced player you may choose to start at <strong>Level 1</strong> or <strong>Level 3</strong>.
+				<p>&#x200b;
+				<p>A new character may only start at <strong>Level 5</strong> if the player's previous character died or retired at level 11 or higher.
+			</div>
+			Character Level: <select id='cLevel' onchange='cLevelUpdate()'>
+				<option value=-1>Select</option>
+				<option value=1>Level 1</option>
+				<option value=3>Level 3</option>
+				<option value=5>Level 5</option>
+			</select>
+		</div>
+		<div id="raceSelection" class="selectionModule">
+			Race: <select id='race' onchange='raceUpdate()'>
+				<option value=-1>Select</option>
+				<option value=1>Aarakocra</option>
+				<option value=2>Aasimar (Fallen)</option>
+				<option value=3>Aasimar (Protector)</option>
+				<option value=4>Aasimar (Scourge)</option>
+				<option value=5>Bugbear</option>
+				<option value=6>Centaur</option>
+				<option value=7>Changeling</option>
+				<option value=8>Custom Lineage</option>
+				<option value=9>Dhampir</option>
+				<option value=10>Dragonborn</option>
+				<option value=11>Dragonborn (Chromatic)</option>
+				<option value=12>Dragonborn (Draconblood)</option>
+				<option value=13>Dragonborn (Gem)</option>
+				<option value=14>Dragonborn (Metallic)</option>
+				<option value=15>Dragonborn (Ravenite)</option>
+				<option value=16>Dwarf (Duergar)</option>
+				<option value=17>Dwarf (Hill)</option>
+				<option value=18>Dwarf (Mark of Warding)</option>
+				<option value=19>Dwarf (Mountain)</option>
+				<option value=20>Elf (Drow)</option>
+				<option value=21>Elf (Eladrin)</option>
+				<option value=22>Elf (High)</option>
+				<option value=23>Elf (Mark of Shadow)</option>
+				<option value=24>Elf (Pallid)</option>
+				<option value=25>Elf (Sea)</option>
+				<option value=26>Elf (Shadar-kai)</option>
+				<option value=27>Elf (Wood)</option>
+				<option value=28>Fairy</option>
+				<option value=29>Firbolg</option>
+				<option value=30>Genasi (Air)</option>
+				<option value=31>Genasi (Earth)</option>
+				<option value=32>Genasi (Fire)</option>
+				<option value=33>Genasi (Water)</option>
+				<option value=34>Gith (Githyanki)</option>
+				<option value=35>Gith (Githzerai)</option>
+				<option value=36>Gnome (Deep/Svirfneblin)</option>
+				<option value=37>Gnome (Forest)</option>
+				<option value=38>Gnome (Mark of Scribing)</option>
+				<option value=39>Gnome (Rock)</option>
+				<option value=40>Goblin</option>
+				<option value=41>Goliath</option>
+				<option value=42>Half-Elf</option>
+				<option value=43>Half-Elf (Variant; Aquatic Elf Descent)</option>
+				<option value=44>Half-Elf (Variant; Drow Descent)</option>
+				<option value=45>Half-Elf (Variant; Mark of Detection)</option>
+				<option value=46>Half-Elf (Variant; Mark of Storm)</option>
+				<option value=47>Half-Elf (Variant; Moon Elf or Sun Elf Descent)</option>
+				<option value=48>Half-Elf (Variant; Wood Elf Descent)</option>
+				<option value=49>Half-Orc</option>
+				<option value=50>Half-Orc (Mark of Finding)</option>
+				<option value=51>Halfling (Ghostwise)</option>
+				<option value=52>Halfling (Lightfoot)</option>
+				<option value=53>Halfling (Lotusden)</option>
+				<option value=54>Halfling (Mark of Healing)</option>
+				<option value=55>Halfling (Mark of Hospitality)</option>
+				<option value=56>Halfling (Stout)</option>
+				<option value=57>Harengon</option>
+				<option value=58>Hexblood</option>
+				<option value=59>Hobgoblin</option>
+				<option value=60>Human</option>
+				<option value=61>Human (Mark of Finding)</option>
+				<option value=62>Human (Mark of Handling)</option>
+				<option value=63>Human (Mark of Making)</option>
+				<option value=64>Human (Mark of Passage)</option>
+				<option value=65>Human (Mark of Sentinel)</option>
+				<option value=66>Human (Variant)</option>
+				<option value=67>Kalashtar</option>
+				<option value=68>Kenku</option>
+				<option value=69>Kobold</option>
+				<option value=70>Leonin</option>
+				<option value=71>Lizardfolk</option>
+				<option value=72>Loxodon</option>
+				<option value=73>Minotaur</option>
+				<option value=74>Orc</option>
+				<option value=75>Reborn</option>
+				<option value=76>Satyr</option>
+				<option value=77>Shifter (Beasthide)</option>
+				<option value=78>Shifter (Longtooth)</option>
+				<option value=79>Shifter (Swiftstride)</option>
+				<option value=80>Shifter (Wildhunt)</option>
+				<option value=81>Simic Hybrid</option>
+				<option value=82>Tabaxi</option>
+				<option value=83>Tiefling</option>
+				<option value=84>Tiefling (Asmodeus)</option>
+				<option value=85>Tiefling (Baalzebul)</option>
+				<option value=86>Tiefling (Base)</option>
+				<option value=87>Tiefling (Dispater)</option>
+				<option value=88>Tiefling (Fierna)</option>
+				<option value=89>Tiefling (Glasya)</option>
+				<option value=90>Tiefling (Levistus)</option>
+				<option value=91>Tiefling (Mammon)</option>
+				<option value=92>Tiefling (Mephistopheles)</option>
+				<option value=93>Tiefling (Variant; Devil's Tongue)</option>
+				<option value=94>Tiefling (Variant; Hellfire)</option>
+				<option value=95>Tiefling (Variant; Infernal Legacy)</option>
+				<option value=96>Tiefling (Variant; Winged)</option>
+				<option value=97>Tiefling (Zariel)</option>
+				<option value=98>Triton</option>
+				<option value=99>Vedalken</option>
+				<option value=100>Verdan</option>
+				<option value=101>Warforged</option>
+				<option value=102>Yuan-ti Pureblood</option>
+			</select>
+		</div>
+		<div id="classSelection" class="selectionModule">
+			<div>
+				<label id='startClassLabel'>Class: </label><select id='startClass'>
+					<option value=-1>Select</option>
+					<option value=1>Artificer</option>
+					<option value=2>Barbarian</option>
+					<option value=3>Bard</option>
+					<option value=4>Cleric</option>
+					<option value=5>Druid</option>
+					<option value=6>Fighter</option>
+					<option value=7>Monk</option>
+					<option value=8>Paladin</option>
+					<option value=9>Ranger</option>
+					<option value=10>Rogue</option>
+					<option value=11>Sorcerer</option>
+					<option value=12>Warlock</option>
+					<option value=13>Wizard</option>
+				</select><label id='startClassLevels'> / <a href='#' id='startClassLeftArrow' class='arrow' onclick='removeClassLevel(1)'>&#8249;</a> 1 <a href='#' id='startClassRightArrow' class='arrow' onclick='addClassLevel(1)'>&#8250;</a></label>
+			</div>
+			<div id="extraClasses">
+				<div>
+					Class / Levels: <select id='class2'>
+						<option value=-1>Select</option>
+						<option value=1>Artificer</option>
+						<option value=2>Barbarian</option>
+						<option value=3>Bard</option>
+						<option value=4>Cleric</option>
+						<option value=5>Druid</option>
+						<option value=6>Fighter</option>
+						<option value=7>Monk</option>
+						<option value=8>Paladin</option>
+						<option value=9>Ranger</option>
+						<option value=10>Rogue</option>
+						<option value=11>Sorcerer</option>
+						<option value=12>Warlock</option>
+						<option value=13>Wizard</option>
+					</select><label id='class2Levels'> / <a href='#' id='class2LeftArrow' class='arrow' onclick='removeClassLevel(2)'>&#8249;</a> 1 <a href='#' id='class2RightArrow' class='arrow' onclick='addClassLevel(2)'>&#8250;</a></label>
+				</div>
+				<div>
+					<a href="#" onclick="addClass()" id="addClassButton" class="classButtons">Add class</a> <a href="#" onclick="removeClass()" id="removeClassButton" class="classButtons">Remove class</a>
+				</div>
+			</div>
+			<div>
+				<label id="mcLabel" disabled=true><input type="checkbox" id="multiclassing" onchange="onMCChange()">Multiclassing</label>
+			</div>
+		</div>
+		<div id="end"></div>
+	</body>
+</html>
